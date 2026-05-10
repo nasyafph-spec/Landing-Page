@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budaya Bali - Warisan Nusantara</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c9922a;
+            --gold-light: #f0c96b;
+            --maroon: #7b1a2e;
+            --cream: #fdf6e3;
+            --dark-brown: #2e1a0e;
+            --terracotta: #c0552a;
+            --sage: #4a7c59;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--cream);
+            color: var(--dark-brown);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar-bali {
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--maroon) 100%);
+            border-bottom: 3px solid var(--gold);
+        }
+        .navbar-brand-text {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.2rem;
+            color: var(--gold-light) !important;
+            letter-spacing: 0.05em;
+        }
+        .navbar-nav .nav-link {
+            color: var(--cream) !important;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover { color: var(--gold-light) !important; }
+        .btn-search-nav {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+        }
+        .btn-search-nav:hover {
+            background: var(--gold);
+            color: var(--dark-brown);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            min-height: 90vh;
+            background:
+                linear-gradient(135deg, rgba(46,26,14,0.82) 0%, rgba(123,26,46,0.65) 100%),
+                url('images/hero-bali.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80'%3E%3Cpath d='M0,40 C300,80 900,0 1200,40 L1200,80 L0,80 Z' fill='%23fdf6e3'/%3E%3C/svg%3E") bottom/cover;
+        }
+        .hero-ornament {
+            position: absolute;
+            top: 20px; right: 30px;
+            font-size: 8rem;
+            opacity: 0.08;
+            color: var(--gold-light);
+            font-family: 'Cinzel Decorative', cursive;
+            pointer-events: none;
+        }
+        .hero-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
+            color: var(--gold-light);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            line-height: 1.3;
+            animation: fadeInUp 0.9s ease both;
+        }
+        .hero-subtitle {
+            color: rgba(253,246,227,0.9);
+            font-size: 1.1rem;
+            animation: fadeInUp 0.9s 0.2s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .btn-hero {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--dark-brown);
+            font-weight: 700;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 20px rgba(201,146,42,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.9s 0.4s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(201,146,42,0.6);
+            color: var(--dark-brown);
+        }
+        .hero-img-wrapper {
+            animation: floatUp 0.9s 0.3s ease both;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .hero-img-wrapper img {
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+            max-height: 420px;
+        }
+
+        /* ===== SECTION 2 - Pengenalan ===== */
+        .section-intro {
+            background-color: var(--cream);
+            padding: 80px 0;
+        }
+        .section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+        }
+        .section-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            color: var(--dark-brown);
+            line-height: 1.4;
+        }
+        .input-bali {
+            border: 2px solid var(--gold);
+            border-radius: 50px 0 0 50px;
+            background: white;
+            padding: 0.6rem 1.2rem;
+        }
+        .input-bali:focus {
+            border-color: var(--maroon);
+            box-shadow: none;
+            outline: none;
+        }
+        .btn-explore {
+            background: linear-gradient(135deg, var(--terracotta), var(--maroon));
+            color: white;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-weight: 700;
+            padding: 0.6rem 1.4rem;
+            white-space: nowrap;
+        }
+        .divider-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+        .divider-ornament::before, .divider-ornament::after {
+            content: '';
+            flex: 1;
+            max-width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold));
+        }
+        .divider-ornament::after {
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        /* ===== SECTION 3 - Kartu Budaya ===== */
+        .section-bg-custom {
+            background: linear-gradient(135deg, #f5e6c8 0%, #fdf6e3 100%);
+        }
+        .card-budaya {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(46,26,14,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+        }
+        .card-budaya:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(46,26,14,0.2);
+        }
+        .card-budaya .card-header-custom {
+            background: linear-gradient(135deg, var(--maroon), var(--dark-brown));
+            color: var(--gold-light);
+            padding: 1rem 1.2rem;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+        .card-budaya .card-body { padding: 1.4rem; text-align: left; }
+        .card-budaya h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        .badge-bali {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--dark-brown);
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 0.3em 0.9em;
+        }
+        .price-tag { color: var(--terracotta); font-weight: 700; }
+        .btn-card-outline {
+            border: 2px solid var(--gold);
+            color: var(--maroon);
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .btn-card-outline:hover {
+            background: var(--gold);
+            color: var(--dark-brown);
+            border-color: var(--gold);
+        }
+        .btn-card-primary {
+            background: linear-gradient(135deg, var(--maroon), var(--dark-brown));
+            color: var(--gold-light);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .btn-card-primary:hover {
+            background: linear-gradient(135deg, var(--terracotta), var(--maroon));
+            color: white;
+        }
+        .feature-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .feature-item .icon-check { color: var(--sage); font-size: 1.1rem; }
+        .feature-item .icon-check-gold { color: var(--gold); font-size: 1.1rem; }
+        .feature-item .icon-x { color: var(--terracotta); font-size: 1.1rem; }
+        .feature-text { font-size: 0.9rem; color: #555; }
+
+        /* ===== SECTION 4 - CTA Card ===== */
+        .cta-card {
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-brown) 100%);
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+        }
+        .cta-card::before {
+            content: '✦';
+            position: absolute;
+            top: -20px; right: 40px;
+            font-size: 8rem;
+            color: rgba(201,146,42,0.1);
+            pointer-events: none;
+        }
+        .btn-cta {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--dark-brown);
+            border: none;
+            font-weight: 700;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(201,146,42,0.5); color: var(--dark-brown); }
+
+        /* ===== SECTION 5 - Feature Rows ===== */
+        .feature-section { background: var(--cream); padding: 80px 0; }
+        .feature-img-wrap {
+            position: relative;
+            display: inline-block;
+        }
+        .feature-img-wrap img {
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(46,26,14,0.2);
+            max-height: 280px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .feature-img-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 2px dashed var(--gold);
+            border-radius: 20px;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .feature-label { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--terracotta); font-size: 1rem; }
+        .feature-title { font-family: 'Cinzel Decorative', cursive; font-size: clamp(1rem, 2.5vw, 1.5rem); color: var(--dark-brown); }
+
+        /* ===== SECTION 6 - Testimonial Slider ===== */
+        .testimonial-section { background: var(--cream); padding: 80px 0; }
+        .testimonial-track {
+            position: relative;
+            overflow: hidden;
+            min-height: 360px;
+        }
+        .testimonial-slide {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+        .testimonial-slide.exit {
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+        .icon-quote-bali {
+            font-size: 5rem;
+            color: var(--gold);
+            line-height: 1;
+            font-family: 'Cormorant Garamond', serif;
+            margin-left: -10px;
+        }
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+            color: var(--dark-brown);
+            line-height: 1.7;
+            margin-top: -10px;
+            margin-right: 40px;
+        }
+        .btn-quote {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--dark-brown);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            padding: 0.7rem 1.8rem;
+            transition: all 0.3s;
+        }
+        .btn-quote:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(201,146,42,0.4); color: var(--dark-brown); }
+        .tab-nav-bali { border: none; gap: 8px; }
+        .tab-nav-bali .nav-link {
+            border: 2px solid transparent;
+            border-radius: 12px;
+            color: #888;
+            padding: 1rem 1.2rem;
+            transition: all 0.3s;
+            text-align: left;
+            cursor: pointer;
+            background: white;
+        }
+        .tab-nav-bali .nav-link:hover { border-color: var(--gold); color: var(--dark-brown); }
+        .tab-nav-bali .nav-link.active {
+            border-color: var(--maroon);
+            background: white;
+            color: var(--dark-brown);
+            box-shadow: 0 4px 15px rgba(123,26,46,0.15);
+        }
+        .tab-title { font-family: 'Cinzel Decorative', cursive; font-size: 0.95rem; color: var(--maroon); display: block; margin-bottom: 4px; }
+        .tab-desc { font-size: 0.85rem; color: #666; display: block; }
+        .person-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--dark-brown); }
+        .person-role { font-size: 0.85rem; color: #888; }
+        .testimonial-dots { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
+        .dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .dot.active { background: var(--gold); transform: scale(1.3); }
+
+        /* ===== SECTION 7 - FAQ ===== */
+        .faq-section { background: linear-gradient(135deg, #f5e6c8 0%, #fdf6e3 100%); padding: 80px 0; }
+        .accordion-bali .accordion-button {
+            background: white;
+            color: var(--dark-brown);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            box-shadow: none;
+        }
+        .accordion-bali .accordion-button:not(.collapsed) {
+            background: linear-gradient(135deg, var(--maroon), var(--dark-brown));
+            color: var(--gold-light);
+        }
+        .accordion-bali .accordion-button::after {
+            filter: none;
+        }
+        .accordion-bali .accordion-button:not(.collapsed)::after {
+            filter: invert(1) sepia(1) saturate(2) hue-rotate(10deg);
+        }
+        .accordion-bali .accordion-item {
+            border: 1px solid rgba(201,146,42,0.3);
+            border-radius: 12px !important;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-bali {
+            background: linear-gradient(135deg, var(--dark-brown) 0%, #1a0a05 100%);
+            color: var(--cream);
+            border-top: 3px solid var(--gold);
+        }
+        .footer-brand { font-family: 'Cinzel Decorative', cursive; color: var(--gold-light); font-size: 1.1rem; }
+        .footer-desc { color: rgba(253,246,227,0.7); font-size: 0.9rem; line-height: 1.7; }
+        .footer-title { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 12px; }
+        .menu-footer {
+            display: block;
+            color: rgba(253,246,227,0.65);
+            text-decoration: none;
+            font-size: 0.875rem;
+            margin-bottom: 6px;
+            transition: color 0.3s;
+        }
+        .menu-footer:hover { color: var(--gold-light); }
+        .social-icon { font-size: 1.3rem; transition: color 0.3s; }
+        .social-icon:hover { color: var(--gold-light) !important; }
+        .footer-divider { border-color: rgba(201,146,42,0.3); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes floatUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .hero-img-wrapper img { animation: floatUp 0.9s 0.3s ease both, float 5s 1.2s ease-in-out infinite; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .hero-section { min-height: 70vh; }
+            .quote-text { font-size: 1.1rem; margin-right: 0; }
+            #footer-copyright, #footer-powered { text-align: center !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-bali" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand navbar-brand-text" href="https://smapluspgri.sch.id" target="_blank">
+                🌺 BUDAYA BALI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tradisi</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Budaya</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Tari-tarian</a></li>
+                            <li><a class="dropdown-item" href="#">Upacara Adat</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Kerajinan Tangan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Galeri</a></li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Cari budaya..." />
+                    <button class="btn btn-search-nav" type="submit">Cari</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN -->
+<main style="margin-top: 67.6px;">
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section">
+        <div class="hero-ornament">✦</div>
+        <div class="container">
+            <div class="row align-items-center py-5">
+                <div class="col-sm-6 order-md-last text-center mb-4 mb-md-0">
+                    <div class="hero-img-wrapper">
+                        <!-- Ganti src dengan gambar Anda, contoh: images/penari-bali.png -->
+                        <img src="images/website_work.svg" alt="Penari Bali" style="max-height:400px;">
+                    </div>
+                </div>
+                <div class="col-sm-6 ps-lg-5">
+                    <p class="section-label" style="color: var(--gold-light); letter-spacing: 0.2em;">🌺 WARISAN NUSANTARA</p>
+                    <h1 class="hero-title mb-4">Mengenal Kekayaan<br>Budaya Bali yang Agung</h1>
+                    <p class="hero-subtitle mb-4">Jelajahi keindahan seni, tradisi, dan kearifan lokal Pulau Dewata yang telah diwariskan selama berabad-abad.</p>
+                    <a href="#" class="btn btn-hero">Jelajahi Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: PENGENALAN -->
+    <section class="section-intro">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="section-label">✦ Tentang Kami</p>
+                    <h2 class="section-title mb-3">Menyelami Jiwa Budaya Bali</h2>
+                    <div class="divider-ornament"><i class="bi bi-flower1"></i></div>
+                    <div class="lead mb-4 mx-auto" style="max-width:580px; font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#555;">
+                        Platform edukasi dan eksplorasi budaya Bali yang menghadirkan informasi mendalam tentang seni, tradisi, dan kearifan lokal Pulau Dewata.
+                    </div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <div class="col-sm-5">
+                            <div class="row g-0">
+                                <div class="col-sm-9 mb-3">
+                                    <input type="text" class="form-control input-bali" placeholder="Cari tradisi atau upacara...">
+                                </div>
+                                <div class="col-sm-3 mb-3">
+                                    <button class="btn btn-explore w-100">Cari</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="mt-3" style="font-family:'Cormorant Garamond',serif;">
+                        Sudah Terdaftar?
+                        <small class="text-muted">Masuk untuk pengalaman lebih</small>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: KARTU BUDAYA (PRICING) -->
+    <section class="py-5 section-bg-custom">
+        <div class="col text-center">
+            <p class="section-label">✦ Kategori Wisata</p>
+            <h2 class="section-title mb-3">Pilih Paket Eksplorasi Budaya</h2>
+            <div class="row justify-content-center mb-4">
+                <div class="col-sm-5">
+                    <p class="lead"><small style="font-family:'Cormorant Garamond',serif; font-size:1rem; color:#555;">
+                        Temukan pengalaman budaya Bali yang paling sesuai dengan minat dan kebutuhan Anda, dari ritual sakral hingga kesenian kontemporer.
+                    </small></p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-3 px-3">
+
+                <!-- Card 1 -->
+                <div class="col-10 col-sm-3 col-lg-2">
+                    <div class="card card-budaya h-100">
+                        <div class="card-header-custom">🎭 SENI PERTUNJUKAN</div>
+                        <div class="card-body">
+                            <h5>Tari Kecak</h5>
+                            <small class="text-muted">Tarian kolosal tanpa iringan gamelan, mengisahkan epik Ramayana.</small>
+                            <div class="my-3"><span class="badge-bali">Populer</span></div>
+                            <h4><span class="price-tag">Gratis</span> Akses</h4>
+                            <div class="text-center my-3">
+                                <button class="btn btn-card-outline w-100">Lihat Detail</button>
+                            </div>
+                            <div class="text-muted small mb-2">Termasuk:</div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check-gold"></i><span class="feature-text">Sejarah lengkap</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check"></i><span class="feature-text">Video pertunjukan</span></div>
+                            <div class="feature-item"><i class="bi bi-x-circle-fill icon-x"></i><span class="feature-text">Tur langsung</span></div>
+                            <hr>
+                            <div class="text-center"><button class="btn btn-card-primary w-100">Mulai</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-10 col-sm-3 col-lg-2">
+                    <div class="card card-budaya h-100">
+                        <div class="card-header-custom">🛕 UPACARA ADAT</div>
+                        <div class="card-body">
+                            <h5>Ngaben</h5>
+                            <small class="text-muted">Upacara kremasi suci sebagai prosesi pelepasan roh menuju alam baka.</small>
+                            <div class="my-3"><span class="badge-bali">Sakral</span></div>
+                            <h4><span class="price-tag">Premium</span> Panduan</h4>
+                            <div class="text-center my-3">
+                                <button class="btn btn-card-outline w-100">Lihat Detail</button>
+                            </div>
+                            <div class="text-muted small mb-2">Termasuk:</div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check-gold"></i><span class="feature-text">Panduan lengkap</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check"></i><span class="feature-text">Makna filosofis</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check"></i><span class="feature-text">Etika pengunjung</span></div>
+                            <hr>
+                            <div class="text-center"><button class="btn btn-card-primary w-100">Mulai</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Featured) -->
+                <div class="col-10 col-sm-3 col-lg-2">
+                    <div class="card card-budaya h-100 border-0" style="border: 2px solid var(--gold) !important;">
+                        <div class="card-header-custom" style="background: linear-gradient(135deg, var(--gold), var(--terracotta));">⭐ PAKET LENGKAP</div>
+                        <div class="card-body">
+                            <h5>Eksplorasi Total</h5>
+                            <small class="text-muted">Akses penuh semua konten budaya, seni, dan wisata spiritual Bali.</small>
+                            <div class="my-3"><span class="badge-bali">Terlengkap</span></div>
+                            <h4><span class="price-tag">All-in-One</span></h4>
+                            <div class="text-center my-3">
+                                <button class="btn btn-card-outline w-100">Lihat Detail</button>
+                            </div>
+                            <div class="text-muted small mb-2">Termasuk:</div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check-gold"></i><span class="feature-text">Semua kategori seni</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check"></i><span class="feature-text">Tur virtual 360°</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check"></i><span class="feature-text">Pemandu berpengalaman</span></div>
+                            <hr>
+                            <div class="text-center"><button class="btn btn-card-primary w-100">Daftar Sekarang</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-10 col-sm-3 col-lg-2">
+                    <div class="card card-budaya h-100">
+                        <div class="card-header-custom">🎨 KERAJINAN TANGAN</div>
+                        <div class="card-body">
+                            <h5>Ukiran Kayu</h5>
+                            <small class="text-muted">Seni ukir Bali yang telah diwariskan turun-temurun dengan motif khas.</small>
+                            <div class="my-3"><span class="badge-bali">Warisan</span></div>
+                            <h4><span class="price-tag">Workshop</span> Tersedia</h4>
+                            <div class="text-center my-3">
+                                <button class="btn btn-card-outline w-100">Lihat Detail</button>
+                            </div>
+                            <div class="text-muted small mb-2">Termasuk:</div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check-gold"></i><span class="feature-text">Tutorial dasar</span></div>
+                            <div class="feature-item"><i class="bi bi-check-circle-fill icon-check"></i><span class="feature-text">Galeri karya</span></div>
+                            <div class="feature-item"><i class="bi bi-x-circle-fill icon-x"></i><span class="feature-text">Bahan disediakan</span></div>
+                            <hr>
+                            <div class="text-center"><button class="btn btn-card-primary w-100">Mulai</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CTA CARD -->
+    <section class="py-5 section-bg-custom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-8">
+                    <div class="cta-card text-white">
+                        <div class="card-body">
+                            <div class="row p-4 align-items-center">
+                                <div class="col-sm-5 text-center mb-4 mb-md-0">
+                                    <!-- Ganti dengan gambar Anda: images/penari-kecak.png -->
+                                    <img src="images/cat_desk.svg" alt="Ilustrasi Budaya Bali" style="max-height:240px; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.4));" class="img-fluid">
+                                </div>
+                                <div class="col-sm-7">
+                                    <p style="color: var(--gold-light); font-family:'Cormorant Garamond',serif; letter-spacing:0.1em;">🌺 BERGABUNG BERSAMA KAMI</p>
+                                    <h2 style="font-family:'Cinzel Decorative',cursive; font-size:clamp(1.2rem,3vw,1.8rem);" class="mb-3">
+                                        Jadilah Bagian dari Pelestarian Budaya Bali yang Autentik
+                                    </h2>
+                                    <p style="color:rgba(253,246,227,0.85);">Bergabunglah dengan ribuan pecinta budaya dan bantu melestarikan warisan leluhur Bali agar tetap hidup bagi generasi mendatang.</p>
+                                    <button class="btn btn-cta mt-3">Daftar Gratis</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FEATURE ROWS -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-8">
+
+                    <!-- Row 1 -->
+                    <div class="row align-items-center mb-5">
+                        <div class="col-sm-6 text-center mb-4 mb-md-0">
+                            <div class="feature-img-wrap">
+                                <!-- Ganti: images/pura-besakih.jpg -->
+                                <img src="images/ilustration 3.png" alt="Pura Besakih">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 ps-md-5">
+                            <p class="feature-label">✦ Spiritual</p>
+                            <h3 class="feature-title mb-3">Pura: Pusat Kehidupan Spiritual Masyarakat Bali</h3>
+                            <p style="color:#555; line-height:1.8;">Pura adalah jantung kehidupan spiritual orang Bali. Ribuan pura tersebar di seluruh pulau, dari Pura Besakih yang megah di lereng Gunung Agung hingga pura-pura kecil di sudut desa, menjadi tempat persembahan dan pemujaan kepada Sang Hyang Widhi.</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="row align-items-center mb-5">
+                        <div class="col-sm-6 text-center order-md-last mb-4 mb-md-0">
+                            <div class="feature-img-wrap">
+                                <!-- Ganti: images/gamelan-bali.jpg -->
+                                <img src="images/images computer.jfif" alt="Gamelan Bali">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 pe-md-5">
+                            <p class="feature-label">✦ Musik</p>
+                            <h3 class="feature-title mb-3">Gamelan Bali: Harmoni dari Perunggu dan Bambu</h3>
+                            <p style="color:#555; line-height:1.8;">Gamelan Bali adalah ansambel musik tradisional yang memadukan instrumen perunggu, bambu, dan kulit. Suaranya yang khas menjadi jiwa dari setiap upacara dan pertunjukan seni, menciptakan trance magis yang menghubungkan manusia dengan alam semesta.</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="row align-items-center">
+                        <div class="col-sm-6 text-center mb-4 mb-md-0">
+                            <div class="feature-img-wrap">
+                                <!-- Ganti: images/batik-bali.jpg -->
+                                <img src="images/website_work.svg" alt="Tenun Bali">
+                            </div>
+                        </div>
+                        <div class="col-sm-6 ps-md-5">
+                            <p class="feature-label">✦ Kerajinan</p>
+                            <h3 class="feature-title mb-3">Tenun Endek: Kain Sakral Penuh Makna</h3>
+                            <p style="color:#555; line-height:1.8;">Tenun Endek adalah kain tradisional Bali dengan motif khas yang kaya simbolisme. Setiap corak menceritakan kisah mitologi atau filosofi Hindu Bali. Kini, Endek telah mendunia dan diakui UNESCO sebagai warisan budaya tak benda yang patut dilestarikan.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: TESTIMONIAL SLIDER ANIMASI -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-8">
+                    <p class="section-label text-center mb-2">✦ Suara Mereka</p>
+                    <h2 class="section-title text-center mb-5">Kata Para Penjelajah Budaya</h2>
+
+                    <!-- Slider -->
+                    <div class="testimonial-track" id="testimonialTrack">
+
+                        <div class="testimonial-slide active" id="slide-0">
+                            <div class="row align-items-center">
+                                <div class="col-sm-8">
+                                    <div class="icon-quote-bali">"</div>
+                                    <div class="quote-text mb-4">
+                                        "Menyaksikan Tari Kecak di Pura Uluwatu saat matahari terbenam adalah pengalaman paling magis dalam hidup saya. Suara 'cak' ratusan penari menciptakan getaran yang merasuk hingga ke jiwa."
+                                    </div>
+                                    <button class="btn btn-quote">Jelajahi Tari Bali</button>
+                                </div>
+                                <div class="col-sm-4 text-center mt-4 mt-md-0">
+                                    <img src="images/PersonBoundingBox.png" alt="" class="img-fluid rounded-circle" style="max-width:140px; border: 3px solid var(--gold);">
+                                    <p class="person-name mt-3">Dewi Ayu Lestari</p>
+                                    <p class="person-role">Peneliti Seni Pertunjukan</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide" id="slide-1">
+                            <div class="row align-items-center">
+                                <div class="col-sm-8">
+                                    <div class="icon-quote-bali">"</div>
+                                    <div class="quote-text mb-4">
+                                        "Upacara Nyepi mengajarkan saya makna keheningan yang sesungguhnya. Satu hari tanpa cahaya dan suara mempertemukan saya dengan kedalaman diri yang selama ini terlupakan."
+                                    </div>
+                                    <button class="btn btn-quote">Pelajari Hari Raya Bali</button>
+                                </div>
+                                <div class="col-sm-4 text-center mt-4 mt-md-0">
+                                    <img src="images/PersonBoundingBox.png" alt="" class="img-fluid rounded-circle" style="max-width:140px; border: 3px solid var(--gold);">
+                                    <p class="person-name mt-3">I Wayan Dharma</p>
+                                    <p class="person-role">Pemangku Adat Ubud</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-slide" id="slide-2">
+                            <div class="row align-items-center">
+                                <div class="col-sm-8">
+                                    <div class="icon-quote-bali">"</div>
+                                    <div class="quote-text mb-4">
+                                        "Belajar membuat canang sari dengan pengrajin lokal di Gianyar membuka mata saya bahwa di balik setiap bunga dan daun tersimpan doa yang tulus dan penuh kasih."
+                                    </div>
+                                    <button class="btn btn-quote">Workshop Budaya Bali</button>
+                                </div>
+                                <div class="col-sm-4 text-center mt-4 mt-md-0">
+                                    <img src="images/PersonBoundingBox.png" alt="" class="img-fluid rounded-circle" style="max-width:140px; border: 3px solid var(--gold);">
+                                    <p class="person-name mt-3">Ni Putu Sari</p>
+                                    <p class="person-role">Pengrajin Canang Sari</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Dots -->
+                    <div class="testimonial-dots">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                    </div>
+
+                    <!-- Tab Nav -->
+                    <nav class="mt-4">
+                        <div class="nav tab-nav-bali nav-fill" id="testimonial-tabs">
+                            <button class="nav-link active" onclick="goToSlide(0); setActiveTab(this)">
+                                <span class="tab-title">Tari Kecak</span>
+                                <span class="tab-desc">Seni pertunjukan kolosal</span>
+                            </button>
+                            <button class="nav-link" onclick="goToSlide(1); setActiveTab(this)">
+                                <span class="tab-title">Hari Raya Nyepi</span>
+                                <span class="tab-desc">Tahun baru Saka</span>
+                            </button>
+                            <button class="nav-link" onclick="goToSlide(2); setActiveTab(this)">
+                                <span class="tab-title">Canang Sari</span>
+                                <span class="tab-desc">Persembahan harian</span>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-8">
+                    <p class="section-label text-center">✦ Pertanyaan Umum</p>
+                    <h2 class="section-title text-center mb-5">Pertanyaan Seputar Budaya Bali</h2>
+                    <div class="accordion accordion-bali" id="faqBali">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    🌺 Apa itu Tri Hita Karana dalam budaya Bali?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqBali">
+                                <div class="accordion-body" style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; line-height:1.8;">
+                                    <strong>Tri Hita Karana</strong> adalah filosofi hidup masyarakat Bali yang berarti "tiga penyebab kebahagiaan." Tiga pilarnya adalah: hubungan harmonis antara manusia dengan Tuhan (<em>Parahyangan</em>), hubungan harmonis antara manusia dengan sesama (<em>Pawongan</em>), dan hubungan harmonis antara manusia dengan alam (<em>Palemahan</em>). Filosofi ini menjadi landasan dari seluruh aspek kehidupan, seni, dan arsitektur di Bali.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    🎭 Apa perbedaan antara Tari Legong, Kecak, dan Barong?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqBali">
+                                <div class="accordion-body" style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; line-height:1.8;">
+                                    <strong>Tari Legong</strong> adalah tari klasik yang dibawakan oleh dua atau tiga penari wanita muda dengan gerakan halus dan ekspresi wajah yang kaya. <strong>Tari Kecak</strong> adalah tari kolosal tanpa gamelan, mengandalkan paduan suara "cak" ratusan penari pria yang mengisahkan Ramayana. <strong>Tari Barong</strong> adalah tari sakral yang menggambarkan pertarungan abadi antara kebaikan (Barong) dan kejahatan (Rangda).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    🛕 Kapan waktu terbaik menyaksikan upacara adat di Bali?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqBali">
+                                <div class="accordion-body" style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; line-height:1.8;">
+                                    Upacara adat berlangsung sepanjang tahun di Bali. Namun beberapa momen paling meriah adalah saat <strong>Galungan & Kuningan</strong> (perayaan kemenangan dharma atas adharma, terjadi setiap 210 hari), <strong>Nyepi</strong> (Tahun Baru Saka), dan <strong>Odalan</strong> (ulang tahun pura). Untuk menyaksikan upacara Ngaben besar, perlu memantau kalender Bali atau bertanya kepada pemangku setempat.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer-bali py-5">
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-sm-3 mb-5">
+                <div class="footer-brand mb-3">🌺 BUDAYA BALI</div>
+                <p class="footer-desc mb-3">Platform pelestarian dan edukasi budaya Bali yang menghadirkan kekayaan warisan Pulau Dewata kepada dunia.</p>
+                <p class="footer-desc mb-3">Bersama menjaga warisan leluhur agar tetap hidup di tengah arus zaman yang terus berubah.</p>
+                <p class="footer-desc mb-1">Email: <a href="mailto:info@budayabali.id" style="color:var(--gold-light);">info@budayabali.id</a></p>
+                <p class="footer-desc mb-3">WhatsApp: <a href="https://wa.me/+6281234567890" style="color:var(--gold-light);" target="_blank">+62 812-3456-7890</a></p>
+                <div class="d-flex flex-row gap-3 flex-wrap">
+                    <a href="#" class="text-warning social-icon"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-warning social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-warning social-icon"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="text-warning social-icon"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="col-sm-2 text-center mb-4">
+                <div class="footer-title">BUDAYA & SENI</div>
+                <a href="#" class="menu-footer">Tari Tradisional</a>
+                <a href="#" class="menu-footer">Musik Gamelan</a>
+                <a href="#" class="menu-footer">Seni Ukir</a>
+                <a href="#" class="menu-footer">Tenun Endek</a>
+                <a href="#" class="menu-footer">Wayang Kulit</a>
+                <div class="footer-title mt-3">UPACARA</div>
+                <a href="#" class="menu-footer">Ngaben</a>
+                <a href="#" class="menu-footer">Odalan</a>
+                <a href="#" class="menu-footer">Galungan</a>
+            </div>
+
+            <div class="col-sm-2 text-center mb-4">
+                <div class="footer-title">DESTINASI</div>
+                <a href="#" class="menu-footer">Pura Besakih</a>
+                <a href="#" class="menu-footer">Ubud</a>
+                <a href="#" class="menu-footer">Tanah Lot</a>
+                <a href="#" class="menu-footer">Uluwatu</a>
+                <div class="footer-title mt-3">FILOSOFI</div>
+                <a href="#" class="menu-footer">Tri Hita Karana</a>
+                <a href="#" class="menu-footer">Sad Kerthi</a>
+                <a href="#" class="menu-footer">Dharma Agama</a>
+                <a href="#" class="menu-footer">Subak</a>
+            </div>
+
+            <div class="col-sm-2 text-center mb-4">
+                <div class="footer-title">KULINER</div>
+                <a href="#" class="menu-footer">Babi Guling</a>
+                <a href="#" class="menu-footer">Sate Lilit</a>
+                <a href="#" class="menu-footer">Lawar</a>
+                <a href="#" class="menu-footer">Jaje Bali</a>
+                <div class="footer-title mt-3">EDUKASI</div>
+                <a href="#" class="menu-footer">Artikel Budaya</a>
+                <a href="#" class="menu-footer">Video Dokumenter</a>
+                <a href="#" class="menu-footer">Podcast Tradisi</a>
+            </div>
+
+            <div class="col-sm-2 text-center mb-4">
+                <div class="footer-title">TENTANG</div>
+                <a href="#" class="menu-footer">Tentang Kami</a>
+                <a href="#" class="menu-footer">Tim Peneliti</a>
+                <div class="footer-title mt-3">LEGAL</div>
+                <a href="#" class="menu-footer">Kebijakan Privasi</a>
+                <a href="#" class="menu-footer">Syarat Penggunaan</a>
+                <a href="#" class="menu-footer">Hak Cipta</a>
+                <a href="#" class="menu-footer">Kontak</a>
+                <a href="#" class="menu-footer">Kemitraan</a>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+        <div class="row justify-content-between">
+            <div class="col-sm-6" id="footer-copyright" style="color:rgba(253,246,227,0.5); font-size:0.85rem;">Copyright &copy;2025 Budaya Bali — Melestarikan Warisan Nusantara</div>
+            <div class="col-sm-6 text-end" id="footer-powered" style="color:rgba(253,246,227,0.5); font-size:0.85rem;">Dibuat dengan ❤️ untuk Pelestarian Budaya Indonesia</div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// === TESTIMONIAL SLIDER ===
+let currentSlide = 0;
+const totalSlides = 3;
+let autoSlideTimer;
+
+function goToSlide(index) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const dots = document.querySelectorAll('.dot');
+    const tabs = document.querySelectorAll('#testimonial-tabs .nav-link');
+
+    // Exit current
+    slides[currentSlide].classList.add('exit');
+    setTimeout(() => {
+        slides[currentSlide].classList.remove('active', 'exit');
+    }, 300);
+
+    currentSlide = index;
+
+    // Enter new
+    setTimeout(() => {
+        slides[currentSlide].classList.add('active');
+    }, 150);
+
+    // Update dots
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+
+    // Update tabs
+    tabs.forEach((t, i) => t.classList.toggle('active', i === index));
+}
+
+function setActiveTab(el) {
+    document.querySelectorAll('#testimonial-tabs .nav-link').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+}
+
+function startAutoSlide() {
+    autoSlideTimer = setInterval(() => {
+        goToSlide((currentSlide + 1) % totalSlides);
+    }, 5000);
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideTimer);
+}
+
+// Pause on hover
+const track = document.getElementById('testimonialTrack');
+track.addEventListener('mouseenter', stopAutoSlide);
+track.addEventListener('mouseleave', startAutoSlide);
+
+// Also pause when tabs/dots clicked
+document.querySelectorAll('.dot, #testimonial-tabs .nav-link').forEach(el => {
+    el.addEventListener('click', () => {
+        stopAutoSlide();
+        setTimeout(startAutoSlide, 8000); // Restart after 8s idle
+    });
+});
+
+startAutoSlide();
+
+// === POPOVERS ===
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+[...popoverTriggerList].map(el => new bootstrap.Popover(el));
+
+// === SCROLL REVEAL (lightweight) ===
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card-budaya, .feature-img-wrap, .cta-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+</script>
+</body>
+</html>
