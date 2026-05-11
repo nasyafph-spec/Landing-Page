@@ -26,8 +26,6 @@
             background-color: var(--cream);
             color: var(--dark-brown);
         }
-
-        /* ===== NAVBAR ===== */
         .navbar-bali {
             background: linear-gradient(135deg, var(--dark-brown) 0%, var(--maroon) 100%);
             border-bottom: 3px solid var(--gold);
@@ -54,8 +52,6 @@
             background: var(--gold);
             color: var(--dark-brown);
         }
-
-        /* ===== HERO SECTION ===== */
         .hero-section {
             min-height: 90vh;
             background:
@@ -127,8 +123,6 @@
             filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
             max-height: 420px;
         }
-
-        /* ===== SECTION 2 - Pengenalan ===== */
         .section-intro {
             background-color: var(--cream);
             padding: 80px 0;
@@ -186,8 +180,6 @@
         .divider-ornament::after {
             background: linear-gradient(90deg, var(--gold), transparent);
         }
-
-        /* ===== SECTION 3 - Kartu Budaya ===== */
         .section-bg-custom {
             background: linear-gradient(135deg, #f5e6c8 0%, #fdf6e3 100%);
         }
@@ -212,6 +204,7 @@
             letter-spacing: 0.05em;
         }
         .card-budaya .card-body { padding: 1.4rem; text-align: left; }
+
         .card-budaya h5 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
@@ -256,7 +249,6 @@
         .feature-item .icon-x { color: var(--terracotta); font-size: 1.1rem; }
         .feature-text { font-size: 0.9rem; color: #555; }
 
-        /* ===== SECTION 4 - CTA Card ===== */
         .cta-card {
             background: linear-gradient(135deg, var(--maroon) 0%, var(--dark-brown) 100%);
             border-radius: 24px;
@@ -284,7 +276,6 @@
         }
         .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(201,146,42,0.5); color: var(--dark-brown); }
 
-        /* ===== SECTION 5 - Feature Rows ===== */
         .feature-section { background: var(--cream); padding: 80px 0; }
         .feature-img-wrap {
             position: relative;
@@ -309,7 +300,6 @@
         .feature-label { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--terracotta); font-size: 1rem; }
         .feature-title { font-family: 'Cinzel Decorative', cursive; font-size: clamp(1rem, 2.5vw, 1.5rem); color: var(--dark-brown); }
 
-        /* ===== SECTION 6 - Testimonial Slider ===== */
         .testimonial-section { background: var(--cream); padding: 80px 0; }
         .testimonial-track {
             position: relative;
@@ -391,7 +381,6 @@
         }
         .dot.active { background: var(--gold); transform: scale(1.3); }
 
-        /* ===== SECTION 7 - FAQ ===== */
         .faq-section { background: linear-gradient(135deg, #f5e6c8 0%, #fdf6e3 100%); padding: 80px 0; }
         .accordion-bali .accordion-button {
             background: white;
@@ -419,7 +408,6 @@
             overflow: hidden;
         }
 
-        /* ===== FOOTER ===== */
         .footer-bali {
             background: linear-gradient(135deg, var(--dark-brown) 0%, #1a0a05 100%);
             color: var(--cream);
@@ -441,7 +429,6 @@
         .social-icon:hover { color: var(--gold-light) !important; }
         .footer-divider { border-color: rgba(201,146,42,0.3); }
 
-        /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -456,7 +443,157 @@
         }
         .hero-img-wrapper img { animation: floatUp 0.9s 0.3s ease both, float 5s 1.2s ease-in-out infinite; }
 
-        /* ===== RESPONSIVE ===== */
+        .hero-slide {
+            opacity: 0;
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .hero-slide.active {
+            opacity: 1;
+        }
+        .row.py-5 {
+            position: relative;
+            background:
+            linear-gradient(rgba(20,10,5,0.45), rgba(20,10,5,0.45)),
+            url('images/lukisan-bali.jpg') center/cover no-repeat;
+
+            border-radius: 20px;
+            overflow: hidden;
+            padding: 60px 30px;
+        }
+        .section-bg-custom {
+            background: linear-gradient(rgba(228,239,255,0.85), rgba(228,239,255,0.85)),
+            url('images/upacara ngaben.jpeg') center/cover !important;
+        }
+        body{
+            background: #fdf6e3;
+        }
+        .hero-section{
+            min-height: 90vh;
+            background:
+            linear-gradient(rgba(20,10,5,0.70), rgba(20,10,5,0.65)),
+            url('images/hero-bali.jpg') center/cover no-repeat;
+            position: relative;
+        }
+        .section-intro{
+            background:
+            linear-gradient(rgba(253,246,227,0.55), rgba(253,246,227,0.55)),
+            url('images/bg bali 1.jpg') center/cover no-repeat;
+        } 
+        .section-intro::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:url('images/ornamen-bali.png');
+            opacity:0.08;
+            pointer-events:none;
+        }
+        .section-bg-custom{
+            background:
+            linear-gradient(rgba(255,248,235,0.45), rgba(255,248,235,0.45)),
+            url('images/bg bali 2.jpg') center/cover no-repeat !important;
+        }
+        .section-bg-custom::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:url('images/pattern-bali.png');
+            opacity:0.06;
+            pointer-events:none;
+        }
+        .card-budaya{
+            border:none;
+            border-radius:22px;
+            overflow:hidden;
+            backdrop-filter: blur(4px);
+            background:
+            linear-gradient(rgba(255,255,255,0.93), rgba(255,255,255,0.93)),
+            url('images/card-bg-bali.jpg') center/cover;
+            box-shadow:0 10px 30px rgba(0,0,0,0.15);
+            transition:0.4s;
+            position: relative;
+        }
+        .card-budaya::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:url('images/pattern-gold.png');
+            opacity:0.05;
+            pointer-events:none;
+        }
+        .card-budaya:hover{
+            transform:translateY(-10px);
+            box-shadow:0 18px 40px rgba(0,0,0,0.22);
+        }
+        .cta-card{
+            position: relative;
+            overflow:hidden;
+            border-radius:24px;
+            background:
+            linear-gradient(rgba(70,15,10,0.70), rgba(40,10,5,0.75)),
+            url('images/pura_bali_sunset.jpg') center/cover no-repeat;
+        }
+        .cta-card::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            background:url('images/pattern-gold.png');
+            opacity:0.08;
+        }
+        .feature-section{
+            background:
+            linear-gradient(rgba(253,246,227,0.50), rgba(253,246,227,0.50)),
+            url('images/upacara_bali.jpg') center/cover no-repeat;
+
+        background-attachment: fixed;
+        }
+        .row.py-5 h1,
+        .row.py-5 p,
+        .row.py-5 a {
+            position: relative;
+            z-index: 2;
+        }
+        .testimonial-section{
+            position:relative;
+            padding:80px 0;
+            background:
+            linear-gradient(rgba(255,250,240,0.88), rgba(255,250,240,0.88)),
+            url('images/siluet keck.jpg') center/cover no-repeat;
+        }
+        .faq-section{
+            position:relative;
+            padding:80px 0;
+            background:
+            linear-gradient(rgba(253,246,227,0.93), rgba(253,246,227,0.93)),
+            url('images/bg-bali-6.jpg') center/cover no-repeat;
+        }
+
+        /* FOOTER */
+        .footer-bali{
+            position:relative;
+            background:
+            linear-gradient(rgba(20,5,0,0.88), rgba(20,5,0,0.92)),
+            url('images/footer-bali.jpg') center/cover no-repeat;
+            border-top:3px solid var(--gold);
+        }
+
+        /* BIAR TULISAN TETEP JELAS */
+        .section-title,
+        .feature-title,
+        .hero-title{
+            text-shadow:2px 2px 10px rgba(0,0,0,0.15);
+        }
+
+        p,
+        .feature-text,
+        .footer-desc{
+            position:relative;
+            z-index:2;
+        }
+
         @media (max-width: 600px) {
             .hero-section { min-height: 70vh; }
             .quote-text { font-size: 1.1rem; margin-right: 0; }
@@ -466,7 +603,6 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
 <header>
     <nav class="navbar fixed-top navbar-expand-lg navbar-bali" data-bs-theme="dark">
         <div class="container-fluid">
@@ -500,17 +636,14 @@
     </nav>
 </header>
 
-<!-- MAIN -->
 <main style="margin-top: 67.6px;">
 
-    <!-- SECTION 1: HERO -->
     <section class="hero-section">
         <div class="hero-ornament">✦</div>
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-sm-6 order-md-last text-center mb-4 mb-md-0">
                     <div class="hero-img-wrapper">
-                        <!-- Ganti src dengan gambar Anda, contoh: images/penari-bali.png -->
                         <img src="images/bali (2).jpeg" alt="Penari Bali" style="max-height:400px;">
                     </div>
                 </div>
@@ -524,7 +657,6 @@
         </div>
     </section>
 
-    <!-- SECTION 2: PENGENALAN -->
     <section class="section-intro">
         <div class="container">
             <div class="row">
@@ -556,7 +688,6 @@
         </div>
     </section>
 
-    <!-- SECTION 3: KARTU BUDAYA (PRICING) -->
     <section class="py-5 section-bg-custom">
         <div class="col text-center">
             <p class="section-label">✦ Kategori Wisata</p>
@@ -571,7 +702,6 @@
 
             <div class="row justify-content-center g-3 px-3">
 
-                <!-- Card 1 -->
                 <div class="col-10 col-sm-3 col-lg-2">
                     <div class="card card-budaya h-100">
                         <div class="card-header-custom">🎭 SENI PERTUNJUKAN</div>
@@ -593,7 +723,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="col-10 col-sm-3 col-lg-2">
                     <div class="card card-budaya h-100">
                         <div class="card-header-custom">🛕 UPACARA ADAT</div>
@@ -615,7 +744,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 (Featured) -->
                 <div class="col-10 col-sm-3 col-lg-2">
                     <div class="card card-budaya h-100 border-0" style="border: 2px solid var(--gold) !important;">
                         <div class="card-header-custom" style="background: linear-gradient(135deg, var(--gold), var(--terracotta));">⭐ PAKET LENGKAP</div>
@@ -637,7 +765,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="col-10 col-sm-3 col-lg-2">
                     <div class="card card-budaya h-100">
                         <div class="card-header-custom">🎨 KERAJINAN TANGAN</div>
@@ -662,7 +789,6 @@
         </div>
     </section>
 
-    <!-- SECTION 4: CTA CARD -->
     <section class="py-5 section-bg-custom">
         <div class="container">
             <div class="row justify-content-center">
@@ -671,7 +797,6 @@
                         <div class="card-body">
                             <div class="row p-4 align-items-center">
                                 <div class="col-sm-5 text-center mb-4 mb-md-0">
-                                    <!-- Ganti dengan gambar Anda: images/penari-kecak.png -->
                                     <img src="images/upacara ngaben.jpeg" alt="Ilustrasi Budaya Bali" style="max-height:240px; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.4));" class="img-fluid">
                                 </div>
                                 <div class="col-sm-7">
@@ -690,18 +815,15 @@
         </div>
     </section>
 
-    <!-- SECTION 5: FEATURE ROWS -->
     <section class="feature-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-8">
 
-                    <!-- Row 1 -->
                     <div class="row align-items-center mb-5">
                         <div class="col-sm-6 text-center mb-4 mb-md-0">
                             <div class="feature-img-wrap">
-                                <!-- Ganti: images/pura-besakih.jpg -->
-                                <img src="images/tari kecak.jpeg" alt="Pura Besakih">
+                                <img src="images/Pura.jpg" alt="Pura Besakih">
                             </div>
                         </div>
                         <div class="col-sm-6 ps-md-5">
@@ -711,12 +833,10 @@
                         </div>
                     </div>
 
-                    <!-- Row 2 -->
                     <div class="row align-items-center mb-5">
                         <div class="col-sm-6 text-center order-md-last mb-4 mb-md-0">
                             <div class="feature-img-wrap">
-                                <!-- Ganti: images/gamelan-bali.jpg -->
-                                <img src="images/garuda wisnu.jpeg" alt="Gamelan Bali">
+                                <img src="images/Gamelan.jpg" alt="Gamelan Bali">
                             </div>
                         </div>
                         <div class="col-sm-6 pe-md-5">
@@ -726,12 +846,10 @@
                         </div>
                     </div>
 
-                    <!-- Row 3 -->
                     <div class="row align-items-center">
                         <div class="col-sm-6 text-center mb-4 mb-md-0">
                             <div class="feature-img-wrap">
-                                <!-- Ganti: images/batik-bali.jpg -->
-                                <img src="images/ogoh ogoh.jpeg" alt="Tenun Bali">
+                                <img src="images/Tenun.jfif" alt="Tenun Bali">
                             </div>
                         </div>
                         <div class="col-sm-6 ps-md-5">
@@ -746,7 +864,6 @@
         </div>
     </section>
 
-    <!-- SECTION 6: TESTIMONIAL SLIDER ANIMASI -->
     <section class="testimonial-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -754,7 +871,6 @@
                     <p class="section-label text-center mb-2">✦ Suara Mereka</p>
                     <h2 class="section-title text-center mb-5">Kata Para Penjelajah Budaya</h2>
 
-                    <!-- Slider -->
                     <div class="testimonial-track" id="testimonialTrack">
 
                         <div class="testimonial-slide active" id="slide-0">
@@ -810,14 +926,12 @@
 
                     </div>
 
-                    <!-- Dots -->
                     <div class="testimonial-dots">
                         <span class="dot active" onclick="goToSlide(0)"></span>
                         <span class="dot" onclick="goToSlide(1)"></span>
                         <span class="dot" onclick="goToSlide(2)"></span>
                     </div>
 
-                    <!-- Tab Nav -->
                     <nav class="mt-4">
                         <div class="nav tab-nav-bali nav-fill" id="testimonial-tabs">
                             <button class="nav-link active" onclick="goToSlide(0); setActiveTab(this)">
@@ -839,7 +953,6 @@
         </div>
     </section>
 
-    <!-- SECTION 7: FAQ -->
     <section class="faq-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -895,7 +1008,6 @@
 
 </main>
 
-<!-- FOOTER -->
 <footer class="footer-bali py-5">
     <div class="container">
         <div class="row my-3">
@@ -903,7 +1015,7 @@
                 <div class="footer-brand mb-3">🌺 BUDAYA BALI</div>
                 <p class="footer-desc mb-3">Platform pelestarian dan edukasi budaya Bali yang menghadirkan kekayaan warisan Pulau Dewata kepada dunia.</p>
                 <p class="footer-desc mb-3">Bersama menjaga warisan leluhur agar tetap hidup di tengah arus zaman yang terus berubah.</p>
-                <p class="footer-desc mb-1">Email: <a href="mailto:info@budayabali.id" style="color:var(--gold-light);">info@budayabali.id</a></p>
+                <p class="footer-desc mb-1">Email: <a href="mailto:Kel4WD@gmail.com" style="color:var(--gold-light);">info@budayabali.id</a></p>
                 <p class="footer-desc mb-3">WhatsApp: <a href="https://wa.me/+6281234567890" style="color:var(--gold-light);" target="_blank">+62 812-3456-7890</a></p>
                 <div class="d-flex flex-row gap-3 flex-wrap">
                     <a href="#" class="text-warning social-icon"><i class="bi bi-facebook"></i></a>
@@ -974,7 +1086,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// === TESTIMONIAL SLIDER ===
 let currentSlide = 0;
 const totalSlides = 3;
 let autoSlideTimer;
@@ -984,7 +1095,6 @@ function goToSlide(index) {
     const dots = document.querySelectorAll('.dot');
     const tabs = document.querySelectorAll('#testimonial-tabs .nav-link');
 
-    // Exit current
     slides[currentSlide].classList.add('exit');
     setTimeout(() => {
         slides[currentSlide].classList.remove('active', 'exit');
@@ -992,15 +1102,12 @@ function goToSlide(index) {
 
     currentSlide = index;
 
-    // Enter new
     setTimeout(() => {
         slides[currentSlide].classList.add('active');
     }, 150);
 
-    // Update dots
     dots.forEach((d, i) => d.classList.toggle('active', i === index));
 
-    // Update tabs
     tabs.forEach((t, i) => t.classList.toggle('active', i === index));
 }
 
@@ -1019,12 +1126,10 @@ function stopAutoSlide() {
     clearInterval(autoSlideTimer);
 }
 
-// Pause on hover
 const track = document.getElementById('testimonialTrack');
 track.addEventListener('mouseenter', stopAutoSlide);
 track.addEventListener('mouseleave', startAutoSlide);
 
-// Also pause when tabs/dots clicked
 document.querySelectorAll('.dot, #testimonial-tabs .nav-link').forEach(el => {
     el.addEventListener('click', () => {
         stopAutoSlide();
@@ -1034,11 +1139,9 @@ document.querySelectorAll('.dot, #testimonial-tabs .nav-link').forEach(el => {
 
 startAutoSlide();
 
-// === POPOVERS ===
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
 [...popoverTriggerList].map(el => new bootstrap.Popover(el));
 
-// === SCROLL REVEAL (lightweight) ===
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
         if (e.isIntersecting) {
